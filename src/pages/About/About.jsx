@@ -45,29 +45,18 @@ export default function About() {
       <div div className={styles['third']}>
       <div className={styles['text-container1']}>
       <h1 style={{ color: "red" }}>Why Choose Us?</h1>
-      <dl
+      
+      <ul>
+      <li>
+        <h1>Consultations with Expert</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga id dignissimos hic, tempore, labore ipsa reiciendis, commodi debitis magni inventore corporis autem nihil omnis similique ullam rem perferendis! Quae molestiae iusto error dolorum veniam recusandae</p>
+      </li>
+      <li>
+        <h1>Best Workout Facilities</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate pariatur aut possimus labore, tempora harum voluptas fugit vitae architecto sequi blanditiis animi, assumenda, magni inventore corporis autem nihil omnis similique ullam rem perferendis! Quae molestiae iusto error dolorum veniam recusandae</p>
+      </li>
+    </ul>
        
-      >
-        <dt>
-          <h1>Consultations with Expert</h1>
-        </dt>
-        <dd>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga id
-          dignissimos hic, tempore, labore ipsa reiciendis, commodi debitis
-          magni inventore corporis autem nihil omnis similique ullam rem
-          perferendis! Quae molestiae iusto error dolorum veniam recusandae
-        </dd>
-        <dt>
-          <h1>Best Workout Facilities</h1>
-        </dt>
-        <dd>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate
-          pariatur aut possimus labore, tempora harum voluptas fugit vitae
-          architecto sequi blanditiis animi, assumenda, magni inventore
-          corporis autem nihil omnis similique ullam rem perferendis! Quae
-          molestiae iusto error dolorum veniam recusandae
-        </dd>
-      </dl>
     </div>
       <div className={styles['video-container1']}>
         <ReactPlayer
@@ -79,4 +68,3 @@ export default function About() {
     </div>
   );
 }
-
