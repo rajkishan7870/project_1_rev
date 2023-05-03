@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import styles from './About.module.css';
 
 export default function About() {
-  const [alertMsg, setAlertMsg] = useState('');
+  const [alertMsg, setAlertMsg] = useState('Clicked from About Us section');
 
   
   const handleLearnMoreClick = () => {
@@ -34,9 +34,7 @@ export default function About() {
           porro totam, consequatur vero minima, voluptas tempore, excepturi a.
           Ratione ab ad itaque quaerat temporibus dolore, voluptatem, quasi illo
           iusto ea quas praesentium aliquid, necessitatibus cumque nesciunt
-          corporis.Lorem ipsum dolor sit amet. Aut beatae asperiores eum reprehenderit sequi sed dolores vero aut perferendis libero quo molestias modi vel dolor officiis. A error atque aut suscipit perspiciatis ex voluptatem adipisci et necessitatibus internos rem omnis atque eos consequatur laborum. Aut praesentium voluptas eum veniam assumenda At placeat ipsum. Qui similique voluptates est molestiae galisum id dignissimos sint sed dicta voluptatum quo quia iste et distinctio quaerat eos libero molestiae.
-
-          Et voluptas quia ut quos accusantium cum quia rerum 33 deserunt aliquam eos ducimus obcaecati sed harum obcaecati. Nam pariatur voluptatem sit repellendus eaque vel repudiandae quisquam.
+          corporis.Lorem ipsum dolor sit amet. 
         </p>
         <Button variant="contained" onClick={handleLearnMoreClick}  sx={{ backgroundColor: "red" }}>Learn More</Button>
        

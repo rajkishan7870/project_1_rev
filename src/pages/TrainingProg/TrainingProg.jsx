@@ -5,28 +5,31 @@ import styles from './TrainingProg.module.css';
 export default function TrainingProg() {
    const [imageNum, setImageNum] = useState(1);
    const sliderImages = [
-      { program : "YOGA",
-         url: "https://img.freepik.com/free-photo/bodybuilder-shows-his-biceps_144627-793.jpg?w=2000",
+      { 
+         url: "https://files.nccih.nih.gov/yoga-gettyimages-1204500395-16-9.jpg",
       },
       {
-         url: "https://www.byrdie.com/thmb/CAr44qpyrW8Wn2DuSid7PxWXQaM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp35f99a2eKb6300_Medium_3271355-fb417f0d8a9a4f959edec6e0dfb83c34.jpg",
+         url: "https://www.healthkart.com/connect/wp-content/uploads/2021/07/bannerjpg.jpg",
       },
       {
-         url: "https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/aerobics.jpg",
+         url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/01/Aerobics_Female_Workout-1296x728-Header-1024x575.jpg?w=1155&h=1528",
       },
       {
-         url: "https://femina.wwmindia.com/content/2022/feb/fitness-011645018810.jpg",
+         url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/woman_stretching_at_home_on_floor-1296x728-header.jpg?w=1155&h=1528",
       },
       
    ];
    return (
-      <div>
-         <h3>
+      <div className={styles.sliderContainer}>
+         <h3  style={{ 
+         
+            color: "red" }}>
             
-           Training Program
+           Training Programs
          </h3>
          <SimpleImageSlider
-            width={900}
+         
+            width={1200}
             height={700}
             images={sliderImages}
             showBullets={true}
