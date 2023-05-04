@@ -24,7 +24,7 @@ export default function Navbar() {
             <h3>Pricing</h3>
         </div>
         <div className={style.btn}>
-            <Button variant='contained' onClick={handleJoin}>Join Us</Button>
+            <Button variant='contained' onClick={handleJoin} sx={{ backgroundColor: "red" }}>Join Us</Button>
         </div>
     </div>
   )
