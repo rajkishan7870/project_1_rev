@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React  from 'react'
 import styles from './Pricing.module.css'
 import { useNavigate } from 'react-router'
-import { getUsers } from '../../utils/localstorage';
 
 export default function Pricing() {
 

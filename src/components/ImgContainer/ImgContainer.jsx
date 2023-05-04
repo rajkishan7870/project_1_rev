@@ -15,7 +15,7 @@ export default function ImgContainer() {
             <h1> Chose your  Best Plan</h1>
             <p>Success is not final, failure is not fatal: It is the courage to continue that counts.</p>
 
-          <a href='#pricing'>  <Button variant='contained' sx={{ backgroundColor: "red" }}>check plans</Button></a>
+          <a href='#pricing'>  <Button variant='contained'>check plans</Button></a>
         </div>
     </div>
   )

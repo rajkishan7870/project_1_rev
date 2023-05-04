@@ -29,7 +29,7 @@ export default function TrainingProg() {
          </h3>
          <SimpleImageSlider
          
-            width={1200}
+            width={1000}
             height={700}
             images={sliderImages}
             showBullets={true}

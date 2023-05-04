@@ -25,7 +25,7 @@ const trainers = [
 
 export default function Team() {
   return (
-    <section className={styles.teamSection}>
+    <section id='trainer' className={styles.teamSection}>
       <h3 className={styles.heading}>Meet Our Team</h3>
       <div className={styles.profilesContainer}>
         {trainers.map(member => (
