@@ -3,7 +3,7 @@ import styles from './Pricing.module.css'
 
 export default function Pricing() {
   return (
-    <div className={styles.pricing_mainBackground}>
+    <div id="pricing" className={styles.pricing_mainBackground}>
       <div className={styles.pricing_container}>
 
         <div className={styles.pass_part}>

@@ -20,7 +20,7 @@ export default function TrainingProg() {
       
    ];
    return (
-      <div className={styles.sliderContainer}>
+      <div id="program" className={styles.sliderContainer}>
          <h3  style={{ 
          
             color: "red" }}>
@@ -29,8 +29,8 @@ export default function TrainingProg() {
          </h3>
          <SimpleImageSlider
          
-            width={1200}
-            height={700}
+            width={1000}
+            height={600}
             images={sliderImages}
             showBullets={true}
             showNavs={true}
