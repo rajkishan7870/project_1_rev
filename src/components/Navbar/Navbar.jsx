@@ -17,6 +17,7 @@ export default function Navbar() {
 
         <div className={style.section}>
             <h3>About</h3>
+            <h3>Training Programs</h3>
             <h3>Trainer</h3>
             <h3>Pricing</h3>
         </div>

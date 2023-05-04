@@ -36,7 +36,7 @@
     padding: 0 1rem;
   }
   
-  @media only screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     .second {
       flex-direction: row;
       justify-content: space-between;
@@ -76,7 +76,7 @@
     }
   
     .text-container1 {
-      max-width: 50%;
+      max-width: 30%;
       text-align: left;
       padding-right: 4rem;
     }
