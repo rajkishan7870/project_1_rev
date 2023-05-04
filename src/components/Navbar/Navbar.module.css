@@ -1,0 +1,31 @@
+.parentDiv{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 10px;
+    position: fixed;
+    top: 1%;
+    width: 100%;
+    background-color: rgb(69, 30, 82);
+}
+
+.section{
+    display: flex;
+    color: white;
+    gap: 20%;
+}
+
+.image{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+}
+
+.btn{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,8 +1,9 @@
 import React, { useState, useRef } from "react";
-import Button from "../../components/Button/Button";
 import { getUsers } from "../../utils/localstorage";
 import styles from "./Register.module.css";
 import { useNavigate } from "react-router-dom";
+import { Button , TextField, Card } from "@mui/material";
+
 
 export default function RegisterPage() {
   const emailRef = useRef();
@@ -73,51 +74,63 @@ export default function RegisterPage() {
   }
   return (
     <div>
-       
-      <div className={styles.parentCont}>
-        <div className={styles.registerPage}>
+          <Card sx={{
+            width : "50%",
+            backgroundColor : "lightgray",
+            margin : "10% 30%", 
+            display : "flex",
+            flexDirection : "column",
+            justifyContent : "center",
+            alignContent : "center"
+             }}>
           <div>
-            <h1>Register</h1>
+            <h1>Register!!!</h1>
           </div>
           <form onSubmit={handleSubmit}>
-            <span>
-              <label>Email : </label>
-              <input ref={emailRef} type="email" placeholder="Enter Email" required />
-            </span>
-
-            <span>
-              <label>Username : </label>
-              <input ref={userNameRef} type="text" placeholder="username" required/>
-            </span>
-            <span>
-              <label>First Name : </label>
-              <input ref={firstNameRef} type="text" placeholder="First Name" required/>
-            </span>
-
-            <span>
-              <label>Last Name : </label>
-              <input ref={lastNameRef} type="text" placeholder="Last Name" required/>
-            </span>
-            <span>
-              <label>Password : </label>
-              <input ref={passwordRef} type="password" placeholder="password" required/>
-            </span>
-            {error && <p style={{ fontSize: '12px', color: 'red' }}>{error}</p>}
-            <Button
-              className={styles.signUpBtn}
-              type="submit"
-              data={"Sign Up"}
+            <TextField className={styles.text}
+            placeholder="Email"
+            id="outlined-basic"
+            label="Email"
+            variant="outlined"
             />
+            <TextField className={styles.text}
+            placeholder="Username"
+            id="outlined-basic"
+            label="Username"
+            variant="outlined"
+            />
+            <TextField className={styles.text}
+            placeholder="Name"
+            id="outlined-basic"
+            label="Name"
+            variant="outlined"
+            />
+            <TextField className={styles.text}
+            placeholder="phone"
+            id="outlined-basic"
+            label="phone"
+            variant="outlined"
+            />
+            <TextField className={styles.text}
+            placeholder="password"
+            id="outlined-basic"
+            label="password"
+            variant="outlined"
+            />
+
+  
+            {error && <p style={{ fontSize: '12px', color: 'red' }}>{error}</p>}
+            <Button className={styles.btn}
+              variant="contained"
+              type="submit"
+            >Sign Up</Button>
           </form>
 
-          <div className={styles.signIn}>
             <span >
               Already Registered ??{" "}
-              <Button className={styles.signInBtn} onClick={handleLogin} data={"Login"} />
+              <Button variant="contained" onClick={handleLogin} >Login</Button>
             </span>
-          </div>
-        </div>
-      </div>
+          </Card>
     </div>
   );
 }

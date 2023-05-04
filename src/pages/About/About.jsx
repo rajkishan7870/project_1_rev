@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import swal from 'sweetalert';
-import Button from '@mui/material/Button';
+import {Button} from '@mui/material/';
 import styles from './About.module.css';
 
 export default function About() {

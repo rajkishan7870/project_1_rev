@@ -1,9 +1,10 @@
 import React from 'react'
+import ImgContainer from '../../components/ImgContainer/ImgContainer'
 
 export default function Home() {
   return (
     <div>
-        <h1>homepage</h1>
+        <ImgContainer/>
     </div>
   )
 }

@@ -1,0 +1,14 @@
+.parentDiv{
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+
+.homeContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: aliceblue;
+}
