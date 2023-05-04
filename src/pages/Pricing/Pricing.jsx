@@ -1,7 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Pricing.module.css'
+import { useNavigate } from 'react-router'
+import { getUsers } from '../../utils/localstorage';
 
 export default function Pricing() {
+
+  const nav = useNavigate();
+
+  function handleDay(){
+    localStorage.setItem("perchased",JSON.stringify(true))
+    nav("/")
+  }
+
+  function handleMonth(){
+    localStorage.setItem("perchased",JSON.stringify(true))
+    nav("/")
+  }
   return (
     <div id="pricing" className={styles.pricing_mainBackground}>
       <div className={styles.pricing_container}>
@@ -17,7 +31,7 @@ export default function Pricing() {
             <p>-- 1 Day Pass</p>
             <p>-- Free Gym Access</p>
             <p>-- 24 Hour Access</p>
-            <button>GET STARTED</button>
+            <button onClick={handleDay}>GET STARTED</button>
           </div>
 
           <div className={`${styles.pass_box} ${styles.right_box}`}>
@@ -31,7 +45,7 @@ export default function Pricing() {
             <p>-- Free Gym Access</p>
             <p>-- 1 Group Class Included</p>
             <p>-- 24 Hour Access</p>
-            <button>GET STARTED</button>
+            <button onClick={handleMonth}>GET STARTED</button>
           </div>
 
         </div>

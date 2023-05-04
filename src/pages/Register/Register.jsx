@@ -1,53 +1,75 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { getUsers } from "../../utils/localstorage";
 import styles from "./Register.module.css";
-import { useNavigate } from "react-router-dom";
-import { Button , TextField, Card } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
+import { Button , TextField, Card, Alert } from "@mui/material";
 
 
 export default function RegisterPage() {
-  const emailRef = useRef();
-  const userNameRef = useRef();
-  const firstNameRef = useRef();
-  const lastNameRef = useRef();
-  const passwordRef = useRef();
+  const [details, setDetails] = useState({
+    email: "",
+    username :"",
+    name : "",
+    phone : "",
+    password: "",
+  });
   const [error,setError] = useState("")
 
   const nav = useNavigate();
 
-  function handleLogin() {
-    nav("/login");
-  }
+  
 
   function handleSubmit(event) {
     event.preventDefault();
     
-    var emailRegex =/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/;
-    if(!emailRegex.test(emailRef.current.value)){
 
-      setError('Please enter correct Email');
+    if(details.email===""){
+      setError("Enter your email first")
       return;
     }
-    else if(emailRegex.test(emailRef.current.value)){
+    else if(details.username===""){
+      setError("Enter your username first")
+      return;
+    }
+    else if(details.name===""){
+      setError("Enter your name first")
+      return;
+    }
+    else if(details.phone===""){
+      setError("Enter your phone first")
+      return;
+    }
+    else if(details.password===""){
+      setError("Enter your password first")
+      return;
+    }
+    
+    var emailRegex =/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/;
+    if(!emailRegex.test(details.email)){
+
+      setError('Invalid Email');
+      return;
+    }
+    else if(emailRegex.test(details.email)){
       setError("")
     }
 
     var usernameRegex = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
-    if(!usernameRegex.test(userNameRef.current.value)){
-      setError('Please enter correct username');
+    if(!usernameRegex.test(details.username)){
+      setError('Invalid Username');
       return;
     }
-    else if(usernameRegex.test(userNameRef.current.value)){
+    else if(usernameRegex.test(details.username)){
       setError("")
     }
 
     var passwordRegex=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,20}$/;
 
-    if(!passwordRegex.test(passwordRef.current.value)){
-      setError('Please Enter valid password');
+    if(!passwordRegex.test(details.password)){
+      setError('Invalid password');
       return;
     }
-    else if(passwordRegex.test(passwordRef.current.value)){
+    else if(passwordRegex.test(details.password)){
       setError("")
     }
 
@@ -55,27 +77,25 @@ export default function RegisterPage() {
     const users = getUsers();
   
 
-    if(users.find((obj)=>obj?.email === emailRef.current.value)){
-      setError("this Email is Already Registered")
+    if(users.find((obj)=>obj?.email === details.email)){
+      setError("This Email is Already Registered")
       return;
     }
 
-    users.push({
-      email: emailRef.current.value,
-      username: userNameRef.current.value,
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
-      password: passwordRef.current.value,
-    });
+    users.push(details);
 
     localStorage.setItem("users", JSON.stringify(users));
     event.target.reset();
     nav("/login")
   }
   return (
-    <div>
-          <Card sx={{
-            width : "50%",
+    <div className={styles.parentDiv}>
+      <div>
+        <img src="GYM.jpg.jpg"/>
+      </div>
+          <Card className={styles.card}
+          sx={{
+            width : "30%",
             backgroundColor : "lightgray",
             margin : "10% 30%", 
             display : "flex",
@@ -83,52 +103,68 @@ export default function RegisterPage() {
             justifyContent : "center",
             alignContent : "center"
              }}>
-          <div>
+          <div className={styles.register}>
             <h1>Register!!!</h1>
           </div>
           <form onSubmit={handleSubmit}>
             <TextField className={styles.text}
-            placeholder="Email"
-            id="outlined-basic"
+            name="email"
+            type="email"
             label="Email"
             variant="outlined"
+            onChange={(e) => {
+              setDetails({ ...details, [e.target.name]: e.target.value });
+            }}
             />
             <TextField className={styles.text}
-            placeholder="Username"
-            id="outlined-basic"
-            label="Username"
+            name="username"
+            type="username"
+            label="username"
             variant="outlined"
+            onChange={(e) => {
+              setDetails({ ...details, [e.target.name]: e.target.value });
+            }}
             />
             <TextField className={styles.text}
-            placeholder="Name"
-            id="outlined-basic"
             label="Name"
+            name="name"
             variant="outlined"
+            onChange={(e) => {
+              setDetails({ ...details, [e.target.name]: e.target.value });
+            }}
             />
             <TextField className={styles.text}
-            placeholder="phone"
-            id="outlined-basic"
-            label="phone"
+            label="Phone"
+            name="phone"
+            type="number"
             variant="outlined"
+            onChange={(e) => {
+              setDetails({ ...details, [e.target.name]: e.target.value });
+            }}
             />
             <TextField className={styles.text}
-            placeholder="password"
-            id="outlined-basic"
-            label="password"
+            name="password"
+            type="password"
+            label="Password"
             variant="outlined"
+            onChange={(e) => {
+              setDetails({ ...details, [e.target.name]: e.target.value });
+            }}
             />
 
   
-            {error && <p style={{ fontSize: '12px', color: 'red' }}>{error}</p>}
+            {error && <Alert severity="error">{error}</Alert>}
+
+
             <Button className={styles.btn}
               variant="contained"
               type="submit"
             >Sign Up</Button>
           </form>
 
-            <span >
+            <span className={styles.login} >
               Already Registered ??{" "}
-              <Button variant="contained" onClick={handleLogin} >Login</Button>
+              <Link className={styles.link} to={"/login"}>Sign In</Link>
             </span>
           </Card>
     </div>
