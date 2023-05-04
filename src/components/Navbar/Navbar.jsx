@@ -9,15 +9,17 @@ export default function Navbar() {
     function handleJoin(){
         navigate("/register")
     }
+    function handleIcon(){
+        navigate("/")
+    }
   return (
     <div className={style.parentDiv}>
         <div className={style.image}>
-            <SportsGymnasticsIcon fontSize='large'/>
+            <SportsGymnasticsIcon fontSize='large' onClick={handleIcon} />
         </div>
 
         <div className={style.section}>
             <h3>About</h3>
-            <h3>Training Programs</h3>
             <h3>Trainer</h3>
             <h3>Pricing</h3>
         </div>

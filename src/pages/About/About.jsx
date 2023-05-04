@@ -14,7 +14,7 @@ export default function About() {
   };
 
   return (
-    <div>
+    <div id="about">
     <div className={styles['second']}>
       <div className={styles['video-container']} >
       

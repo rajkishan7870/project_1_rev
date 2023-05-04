@@ -1,11 +1,10 @@
 import React from 'react'
 import style from './ImgContainer.module.css'
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router';
 export default function ImgContainer() {
-
-    function handleCheckPlan(){
-
-    }
+    const navigate = useNavigate();
+    
   return (
     <div>
         <div className={style.parentDiv}>
@@ -16,7 +15,7 @@ export default function ImgContainer() {
             <h1> Chose your  Best Plan</h1>
             <p>Success is not final, failure is not fatal: It is the courage to continue that counts.</p>
 
-            <Button variant='contained' onClick={handleCheckPlan} >check plans</Button>
+          <a href='#pricing'>  <Button variant='contained'>check plans</Button></a>
         </div>
     </div>
   )
