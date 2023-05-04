@@ -6,6 +6,7 @@ import Pricing from './pages/Pricing/Pricing';
 import Trainer from './pages/Trainer/Trainer';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Training from './pages/TrainingProg/TrainingProg';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/trainer" element={<Trainer/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/training" element={<Training Program/>}/>
       </Routes>
      
     </div>
