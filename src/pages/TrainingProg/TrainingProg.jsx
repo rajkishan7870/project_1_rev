@@ -20,7 +20,7 @@ export default function TrainingProg() {
       
    ];
    return (
-      <div className={styles.sliderContainer}>
+      <div id="program" className={styles.sliderContainer}>
          <h3  style={{ 
          
             color: "red" }}>
