@@ -19,13 +19,12 @@ export default function Navbar() {
         </div>
 
         <div className={style.section}>
-            <h3><a href="#about">About</a></h3>
-            <h3><a href="#trainer">Trainer</a></h3>
-            <h3><a href="#program">Program</a></h3>
-            <h3><a href="#pricing">Pricing</a></h3>
+            <h3>About</h3>
+            <h3>Trainer</h3>
+            <h3>Pricing</h3>
         </div>
         <div className={style.btn}>
-            <Button variant='contained' onClick={handleJoin}>Join Us</Button>
+            <Button variant='contained' onClick={handleJoin} sx={{ backgroundColor: "red" }}>Join Us</Button>
         </div>
     </div>
   )

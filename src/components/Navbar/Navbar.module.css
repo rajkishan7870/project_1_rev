@@ -14,6 +14,8 @@
     display: flex;
     color: white;
     gap: 20%;
+    position: sticky;
+
 }
 a{
     color: aliceblue;
