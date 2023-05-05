@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Trainer.module.css';
-import {Button} from '@mui/material/';
+import { Button } from '@mui/material/';
+
 const trainers = [
   {
     name: 'Dr. Aldoraa',
@@ -20,31 +21,44 @@ const trainers = [
     role: 'Fitness Coach',
     description: 'Nulla facilisi. Morbi accumsan, ex at finibus malesuada, nulla orci tincidunt lacus, a fermentum velit velit non magna.',
   },
-  
 ];
 
 export default function Team() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleTrainers = showAll ? trainers : [trainers[0]];
+
+  const handleShowAll = () => {
+    setShowAll(true);
+  };
+
   return (
     <section id='trainer' className={styles.teamSection}>
       <h3 className={styles.heading}>Meet Our Team</h3>
       <div className={styles.profilesContainer}>
-        {trainers.map(member => (
+        {visibleTrainers.map((member) => (
           <div key={member.name} className={styles.teamProfile}>
-            <img className={styles.profileImage} src={member.image} alt={`${member.name} profile`} />
+            <img
+              className={styles.profileImage}
+              src={member.image}
+              alt={`${member.name} profile`}
+            />
             <h3 className={styles.profileName}>{member.name}</h3>
             <p className={styles.profileRole}>{member.role}</p>
             <p className={styles.profileDescription}>{member.description}</p>
-
-            <Button variant="contained"  sx={{ backgroundColor: "red" }}>more details</Button>
-       
           </div>
-      
         ))}
       </div>
-      <div >
-      <Button variant="contained"  sx={{ backgroundColor: "red" }}>See Whole Team</Button>
-      </div>
+      {!showAll && (
+        <div>
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: 'red' }}
+            onClick={handleShowAll}
+          >
+            See Whole Team
+          </Button>
+        </div>
+      )}
     </section>
   );
 }
-
